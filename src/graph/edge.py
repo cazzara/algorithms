@@ -11,9 +11,11 @@ class Edge:
         return self.weight < other.weight
 
     def __eq__(self, other):
-        return (self.weight == other.weight and
-               self.src == other.src and 
-               self.dest == other.dest)
+        return (
+            self.weight == other.weight
+            and self.src == other.src
+            and self.dest == other.dest
+        )
 
     def __hash__(self):
         return hash(self.src) + hash(self.dest) + hash(self.weight)
