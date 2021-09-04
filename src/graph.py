@@ -78,7 +78,7 @@ class Graph:
         path = [dest]
         p = self.nodes[dest].parent
         while p:
-            path.append(p.name)
+            path.append(p.value)
             p = p.parent
         print("Shortest Path:")
         print(" ".join([str(n) for n in path]))

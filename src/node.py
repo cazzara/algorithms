@@ -1,31 +1,34 @@
 class Node:
-    def __init__(self, n):
-        self.name = n
-
-    def __hash__(self):
-        return hash(self.name)
-
-    def __eq__(self, other):
-        return self.name == other.name
+    def __init__(self, v):
+        self.value = v
+        self.parent = None
 
 
 class GraphNode(Node):
     def __init__(self, n):
-        super(self, GraphNode).__init__(n)
+        super().__init__(n)
         self.adjacencies = set()
-        self.parent = None
         self.distance = 0
 
     def __repr__(self):
-        return f"{self.name} - {self.adjacencies}"
+        return f"{self.value} - {self.adjacencies}"
+
+    def __eq__(self, other):
+        return self.value == other.value
+
 
 
 class TreeNode(Node):
     def __init__(self, n):
-        super(self, TreeNode).__init__(n)
-        self.parent = None
+        super().__init__(n)
         self.left = None
         self.right = None
 
     def __repr__(self):
-        return f"{self.name}"
+        return f"{self.value}"
+
+    def __eq__(self, other):
+        return self.value == other.value and \
+               self.left == other.left and \
+               self.right == other.right and \
+               self.parent == other.parent
