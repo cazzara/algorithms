@@ -1,4 +1,3 @@
-import pdb
 import pytest
 from src.matching import resident_hospital_matcher
 

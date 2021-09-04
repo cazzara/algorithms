@@ -1,7 +1,7 @@
 import random
 from math import inf
-from src.graph.edge import Edge
-from src.graph.node import Node
+from src.edge import Edge
+from src.node import GraphNode
 import heapq
 
 # random.seed(20)
@@ -30,7 +30,7 @@ class Graph:
         Generate a graph with random edges/weights
         Either directed or undirected
         """
-        g = {i: Node(i) for i in range(1, n + 1)}
+        g = {i: GraphNode(i) for i in range(1, n + 1)}
 
         for i in range(n):
             src = random.randint(1, n)

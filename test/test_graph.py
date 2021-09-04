@@ -1,6 +1,6 @@
 import pytest
 import random
-from src.graph.graph import Graph
+from src.graph import Graph
 
 
 @pytest.mark.parametrize(
